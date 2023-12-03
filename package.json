@@ -1,0 +1,55 @@
+{
+  "name": "phpdoc-generator",
+  "displayName": "phpdoc-generator",
+  "description": "PHPDoc Generator é uma extensão projetada para melhorar significativamente a eficiência e qualidade da documentação de código PHP. Esta extensão permite aos desenvolvedores PHP gerar automaticamente comentários PHPDoc para suas funções e métodos!",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:phpdoc-generator.gerarPHPDoc"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "PHPDoc Generator",
+      "properties": {
+        "phpdoc-generator.openaiApiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Chave da API da OpenAI para a extensão PHPDoc Generator"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "phpdoc-generator.gerarPHPDoc",
+        "title": "Gerar PHPDoc"
+      },
+      {
+        "command": "phpdoc-generator.insertApiKey",
+        "title": "Inserir Chave da API da OpenAI para PHPDoc Generator"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.84.0",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.8",
+    "eslint": "^8.54.0",
+    "typescript": "^5.3.2"
+  },
+  "dependencies": {
+    "openai": "^4.20.1"
+  }
+}
